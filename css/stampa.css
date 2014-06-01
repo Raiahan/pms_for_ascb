@@ -1,0 +1,32 @@
+body {
+    font-size: 8px;
+}
+#left,#right,#left {
+    padding:5px;
+    float:left;
+}
+#right {
+    margin-left:10px;
+    margin-right:10px;
+    padding-left:10px;
+}
+.tabella {
+    width:auto;
+    float:left;
+    margin-left:5px;
+}
+/*Fix per google chrome*/
+.table {
+    border-collapse: collapse !important;
+}
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #ddd !important;
+} 
+/*---*/
+hr {
+    clear:both;
+    position:relative;
+    top:5px;
+    border-bottom: 1px dashed #000; 
+}
