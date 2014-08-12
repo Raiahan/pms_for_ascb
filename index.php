@@ -36,23 +36,8 @@ if (isset($_POST['login'])) {
 		$risposta = login($_POST['email'], $_POST['password'], $conn);
 		if (($risposta == 2) || ($risposta == 4)) {
 			require_once 'classi/Sessione.php';
-
-			$time = time();
-			$addr = $_SERVER['REMOTE_ADDR'];
-			$new_sess = new Sessione();
-			$new_sess -> setUid($_SESSION['idUtente']);
-			$new_sess -> setHash(sha1(microtime(true) . mt_rand(10000, 90000)));
-			//direi che è abbastanza casuale...
-			$new_sess -> setTimestamp($time);
-			$new_sess -> setAddr($addr);
-			$new_sess -> save($conn);
-
-			$info = array('s' => $new_sess -> getSid(), 'h' => $new_sess -> getHash(), );
-			//Salvo in sessione l'ID della sessione in DB
-			$_SESSION['sid'] = $new_sess -> getSid();
-			if ($remember) {
-				setcookie('auth', serialize($info), time() + 3600 * 24 * 30, '/');
-			}
+			//Avviamo nuova sessione
+			Sessione::startSession($remember,$conn);
 			if ($risposta == "2") {
 				header("Location: master/personaggi.php");
 				die('');
@@ -92,23 +77,9 @@ function login($user, $password, $conn) {
 	}
 	if ($utente -> isAttivo() == 0)
 		return "1";
-
-	if ($utente -> is_Master()) {
-		$_SESSION['idUtente'] = $utente -> getID();
-		$_SESSION['master'] = $utente -> is_Master();
-		return "2";
-	} else {
-		//Carichiamo in sessione i personaggi posseduti
-		try {
-			$personaggi = $utente -> prelevaPersonaggi($conn);
-			$_SESSION['idPersonaggi'] = $personaggi;
-			$_SESSION['idUtente'] = $utente -> getID();
-			$_SESSION['master'] = $utente -> is_Master();
-		} catch (Exception $e) {//Se l'utente non ha personaggi assegnati, è inutile farlo connettere
-			return "3";
-		}
-		return "4";
-	}
+	//Restituiamo il valore di populateCharacters
+	require_once 'classi/Sessione.php';
+	return Sessione::populateCharacters($utente,$conn);
 }
 ?>
 <!doctype html>

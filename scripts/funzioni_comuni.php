@@ -119,38 +119,7 @@ function autologin() {
     } catch (Exception $e) {
         return false;
     }
-
-    if ($usr->is_Master()) {
-        $_SESSION['idUtente'] = $usr->getID();
-        $_SESSION['master'] = $usr->is_Master();
-    } else {
-        try {
-            $personaggi = $usr->prelevaPersonaggi($conn);
-            $_SESSION['idPersonaggi'] = $personaggi;
-            $_SESSION['idUtente'] = $usr->getID();
-            $_SESSION['master'] = $usr->is_Master();
-        } catch (Exception $e) {
-            return false;
-        }
-    }
-    /* Creiamo una nuova sessione */
-    $addr = $_SERVER['REMOTE_ADDR'];
-    $new_sess = new Sessione();
-    $new_sess->setUid($usr->getID());
-    $new_sess->setHash(sha1(microtime(true) . mt_rand(10000, 90000)));
-    $new_sess->setTimestamp(time());
-    $new_sess->setAddr($addr);
-    $new_sess->save($conn);
-
-    //Salvo in sessione l'ID della sessione in DB
-    $_SESSION['sid'] = $new_sess->getSid();
-    $info = array(
-        's' => $new_sess->getSid(),
-        'h' => $new_sess->getHash(),
-    );
-    /* Aggiorniamo il cookie auth */
-    setcookie('auth', serialize($info), time() + 3600 * 24 * 30, '/');
-    return true;
+    if(Sessione::populateCharacters($usr,$conn) == "3" ) return false; //si verifica se c'è stato errore nel fetching dei personaggi.
+    Sessione::startSession(true,$conn); //avviamo sessione con impostazione "Ricordami" attiva.
 }
-
 ?>

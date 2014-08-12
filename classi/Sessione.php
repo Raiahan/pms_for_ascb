@@ -127,7 +127,47 @@ class Sessione {
 
         return $userSessions;
     }
-
+    //Avvia una nuova sessione
+    public static function startSession($remember,$conn) {
+        /* Creiamo una nuova sessione */
+        $addr = $_SERVER['REMOTE_ADDR'];
+        $new_sess = new Sessione();
+        $new_sess->setUid($_SESSION['idUtente']);
+        $new_sess->setHash(sha1(microtime(true) . mt_rand(10000, 90000)));
+        $new_sess->setTimestamp(time());
+        $new_sess->setAddr($addr);
+        $new_sess->save($conn);
+    
+        //Salvo in sessione l'ID della sessione in DB
+        $_SESSION['sid'] = $new_sess->getSid();
+        $info = array(
+            's' => $new_sess->getSid(),
+            'h' => $new_sess->getHash(),
+        );
+        /* Aggiorniamo il cookie auth */
+        if($remember)
+            setcookie('auth', serialize($info), time() + 3600 * 24 * 30, '/');
+        return true;
+    }
+    //Istanzia i personaggi per l'utente.
+    public static function populateCharacters($utente,$conn) {
+        if ($utente -> is_Master()) {
+            $_SESSION['idUtente'] = $utente -> getID();
+            $_SESSION['master'] = $utente -> is_Master();
+            return "2";
+        } 
+        //Carichiamo in sessione i personaggi posseduti
+            try {
+                $personaggi = $utente -> prelevaPersonaggi($conn);
+                $_SESSION['idPersonaggi'] = $personaggi;
+                $_SESSION['idUtente'] = $utente -> getID();
+                $_SESSION['master'] = $utente -> is_Master();
+            } 
+            catch (Exception $e) {  //Se l'utente non ha personaggi assegnati, è inutile farlo connettere
+                return "3";
+            }
+        return "4";
+    }
     public function getByUsername($username, $conn, $limit) {
         $query = $conn->prepare(
                 "SELECT ID_Utente, Username, addr, Master, sid, timestamp
@@ -175,7 +215,6 @@ class Sessione {
     private $timestamp;
     private $hash;
     private $addr;
-
 }
 
 ?>

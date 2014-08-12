@@ -107,7 +107,7 @@ class PG {
     }
 
     public function impostaNome($nome) {
-        $this->nome = strip_tags(ucwords(strtolower(trim($nome))));
+        $this->nome = strip_tags(ucwords(trim($nome)));
     }
 
     public function impostaNota($nota) {
