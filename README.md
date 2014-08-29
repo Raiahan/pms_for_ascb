@@ -41,3 +41,13 @@ Se avete installato PMS in una sottocartella, l'installazione partirà digitando
 
 www.miodominio.it/nomesottocartella/installazione/avvia_installazione.php
 
+A questo punto inserite:
+a) l'email del master
+b) la username del master
+c) la password desiderata del master(nell'installazione è visibile mentre la scrivete, attenzione! :) )
+
+Cliccate su installa e attendete l'avvenuta notifica di installazione. Riceverete una email dalla piattaforma stessa di avvenuta installazione.
+
+4) Cancellate la cartella installazione(sì, tutta la cartella) dopo aver installato PMS. E' importante!
+
+Congratulazioni, ora PMS è pronto per essere utilizzato!
