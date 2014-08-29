@@ -2,7 +2,7 @@ PMS
 ===
 
 Installazione
-
+==
 1) Estrarre l'archivio sul vostro web server, potete estrarre nella root directory oppure in una sottocartella a vostra scelta.
 
 2) Aprire il file config.php contenuto nella cartella scripts/. Dovrete modificare ciò che si trova tra le virgolette "" senza rimuoverle. 
