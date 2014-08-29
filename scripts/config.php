@@ -1,12 +1,12 @@
 <?php
 /* Parametri da modificare */
-$nome_gioco = "Prova";
-$nome_cartella = "pms";
+$nome_gioco = "NomeGioco";
+$nome_cartella = "nomecartella";
 /* Parametri per database */
 $db_host = "localhost";
-$db_username = "root";
-$db_password = 'tartassare';
-$db_nome = 'pms';
+$db_username = "username_db";
+$db_password = 'password_db';
+$db_nome = 'nome_database';
 /* Non modificare oltre questo punto!*/
 
 function connetti() {
