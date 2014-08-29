@@ -1,6 +1,7 @@
 /* Funzioni client side per modifica impostazioni account.
  * Contiene anche funzioni per la gestione delle notifiche.
  */
+var url_pms = $('#ind_pms').val();
 
 $(document).ready(function() {
 	//Assegno le azioni ai pulsanti
@@ -18,7 +19,6 @@ $(document).ready(function() {
 
 function cambiaEmail() {
 	var email = $("#nuova_email").val();
-	var url_pms = $('#ind_pms').val();
 	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	if (!filter.test(email)) {
 		lanciaNotifica("Formato email non valido", "error");
@@ -49,7 +49,6 @@ function cambiaPassword() {
 	var vecchiaPass = $("#vecchia_pwd").val();
 	var nuovaPass = $("#nuova_pwd").val();
 	var confPass = $("#conferma_pwd").val();
-	var url_pms = $('#ind_pms').val();
 	if ((vecchiaPass == "") || (nuovaPass == "") || (confPass == "")) {
 		lanciaNotifica("Compilare tutti i campi.", "error");
 		return;
