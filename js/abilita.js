@@ -39,6 +39,7 @@ function creaAbilita() {
 	var nome = document.getElementById("nome_abilita").value;
 	var descrizione = document.getElementById("desc_abilita").value;
 	var costo = document.getElementById("costo_abilita").value;
+	var note = document.getElementById("note_abilita").value;
 	$.ajax({
 		type : "POST",
 		url : "../scripts/abilita/aggiungi.php",
@@ -46,7 +47,8 @@ function creaAbilita() {
 		data : {
 			nome : nome,
 			desc : descrizione,
-			costo : costo
+			costo : costo,
+			note : note
 		},
 		beforeSend : function(xhr) {
 			lanciaNotifica("Creazione in corso...", "info");

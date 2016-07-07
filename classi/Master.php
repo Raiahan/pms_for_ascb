@@ -79,6 +79,7 @@ class Master {
             $abilita['descrizione'] = $riga['Descrizione'];
             $abilita['nome'] = $riga['Nome'];
             $abilita['costo'] = $riga['Costo'];
+            $abilita['note'] = $riga['Note'];
             array_push($arr_abilita, $abilita);
         }
 

@@ -33,7 +33,7 @@ try {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Gestione">
         <meta name="author" content="Mario Villani">
-        <meta charset="utf-8">   
+        <meta charset="utf-8">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="librerie/jasny-bootstrap.min.css">
         <link href="librerie/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css">
@@ -130,5 +130,5 @@ try {
         <script type="text/javascript" src="librerie/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="js/account.js"></script>
         <script type="text/javascript" src="js/modifica.js"></script>
-    
+
 </body></html>

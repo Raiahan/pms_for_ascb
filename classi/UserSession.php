@@ -6,7 +6,7 @@
  * @author Demigod
  */
 class UserSession {
-    
+
     function __construct($ID_Utente, $Username, $Master, $sid, $timestamp, $addr) {
         $this->ID_Utente = $ID_Utente;
         $this->Username = $Username;
@@ -55,7 +55,7 @@ class UserSession {
     public function setTimestamp($timestamp) {
         $this->timestamp = $timestamp;
     }
-    
+
     public function getAddr() {
         return $this->addr;
     }
@@ -63,7 +63,7 @@ class UserSession {
     public function setAddr($addr) {
         $this->addr = $addr;
     }
-    
+
     private $ID_Utente;
     private $Username;
     private $Master;

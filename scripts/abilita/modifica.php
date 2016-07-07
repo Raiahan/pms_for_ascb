@@ -33,6 +33,8 @@ try {
         $ab->impostaDescrizione($val);
     else if ($name === 'costo')
         $ab->impostaCosto($val);
+    else if ($name === 'note')
+        $ab->impostaNote($val);
     $ab->memorizza($conn);
 } catch (Exception $e) {
     errore($e->getMessage());

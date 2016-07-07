@@ -100,7 +100,7 @@ function installa_pms() {
                         <button class="btn btn-primary btn-lg" type="submit" id="installa">
                             Installa
                         </button><br><br>
-                    </form>  
+                    </form>
                 </div>
             </div><div id="push"></div></div>
             <?php

@@ -64,7 +64,7 @@ try {
                                         <h3><a href="../panoramica.php?id=<?php echo $personaggio['ID']; ?>"><?php echo $personaggio['Nome']; ?></a></h3>
                                         <small class="pull-left"><b>Regno: </b><?php echo $personaggio['Regno']; ?></small><br />
                                         <small class="pull-left"><b>Proprietario: </b><?php echo $personaggio['Proprietario']; ?></small>
-                                        <button class="btn btn-danger hidden pull-right">x</button>                                        
+                                        <button class="btn btn-danger hidden pull-right">x</button>
                                     </div>
                                 </div>
                         <?php } ?>

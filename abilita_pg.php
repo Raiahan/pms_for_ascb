@@ -95,8 +95,8 @@ try {
                 </div>
                 <h2>Assegna abilità</h2>		<div class="alert alert-info">
                     Seleziona ed assegna al personaggio una delle abilità disponibili.
-                </div> 
-                Nome abilità : 
+                </div>
+                Nome abilità :
                 <?php
                 try {
                     $lista_abilita = Master::getAbilita($conn);
@@ -113,7 +113,7 @@ try {
                 ?>
                 <?php
 					require "componenti/modale_account.php";
- ?>        
+ ?>
                 <span id="id_pg" pg="<?php echo $_GET['id'] ?>"></span>
             </div><div id="push"></div></div>
             <?php

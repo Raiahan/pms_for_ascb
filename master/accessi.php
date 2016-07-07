@@ -62,7 +62,7 @@ else
                             <option value="50"> 50 </option>
                             <option value="100"> 100 </option>
                             <option value="200"> 200 </option>
-                        </select>                    
+                        </select>
                         <input class="form-control" placeholder="Filtra per nome utente" name="username" value="<?php if (isset($username)) echo $username; ?>" type="text"><br>
                         <button type="submit" class="btn btn-primary btn-lg">Filtra</button>
                     </form>
@@ -95,7 +95,7 @@ else
                                     <?php
                                 endforeach;
                             }
-                            ?>                  
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -114,5 +114,5 @@ else
         <script type="text/javascript" src="../js/account.js"></script>
         <script type="text/javascript" src="../js/accessi.js"></script>
         <script type="text/javascript" src="../librerie/jquery.tablesorter.min.js"></script>
-    
+
 </body></html>

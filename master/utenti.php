@@ -22,7 +22,7 @@ require_once ("../classi/Master.php");
 try {
     $utenti = Master::getUtenti($conn);
 } catch (Exception $e) {
-    
+
 }
 ?>
 <!DOCTYPE html>

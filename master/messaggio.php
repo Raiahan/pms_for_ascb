@@ -67,5 +67,5 @@ try {
         <script type="text/javascript" src="../librerie/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="../js/account.js"></script>
         <script type="text/javascript" src="../js/messaggio.js"></script>
-    
+
 </body></html>

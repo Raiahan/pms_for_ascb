@@ -38,7 +38,7 @@ try {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Panoramica personaggio">
         <meta name="author" content="Mario Villani">
-        <meta charset="utf-8">   
+        <meta charset="utf-8">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="css/comune.css">
         <link href="librerie/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css">
@@ -86,54 +86,54 @@ try {
                 </div>
                 <div class="panel-group" id="accordion">
                 <div class="panel panel-default" id="accordion1">
-                        <div class="panel-heading"> 
+                        <div class="panel-heading">
                             <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
                                 Abilità
                             </a>
                             </h4>
-                        </div> 
+                        </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <?php
                                 if (empty($lista_abilita))
                                     echo "Nessuna abilità presente";
                                 else {
-                                    echo "<table class=\"table table-hover table-bordered \" id=\"abilita\"><thead><th>Abilità</th><th>Descrizione</th><th>Costo</th></thead>";
+                                    echo "<table class=\"table table-hover table-bordered \" id=\"abilita\"><thead><th>Abilità</th><th>Descrizione</th><th>Costo</th><th>Note</th></thead>";
                                     foreach ($lista_abilita as $abilita) {
-                                        echo "<td>" . $abilita['Nome'] . "</td><td>" . $abilita['Descrizione'] . "</td><td>" . $abilita['Costo'] . "</td>";
+                                        echo "<td>" . $abilita['Nome'] . "</td><td>" . $abilita['Descrizione'] . "</td><td>" . $abilita['Costo'] . "</td><td>" .$abilita['Note'] . "</td>";
                                     }
                                     echo "<br>";
                                 }
-                                ?>    
-                                </table>           
+                                ?>
+                                </table>
                             </div>
                         </div>
                 </div>
                 <div class="panel panel-default" id="accordion2">
-                        <div class="panel-heading"> 
+                        <div class="panel-heading">
                             <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                                 Background
                             </a>
                             </h4>
-                        </div> 
+                        </div>
                         <div id="collapseTwo" class="panel-collapse collapse in">
-                            <div class="panel-body">     
+                            <div class="panel-body">
                                 <?php echo $personaggio->getBackground(); ?>
                             </div>
                         </div>
-                </div>                                           
+                </div>
                 <div class="panel panel-default" id="accordion3">
-                        <div class="panel-heading"> 
+                        <div class="panel-heading">
                             <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
                                 Note del master
                             </a>
                             </h4>
-                        </div> 
+                        </div>
                         <div id="collapseThree" class="panel-collapse collapse in">
-                            <div class="panel-body" id="note">     
+                            <div class="panel-body" id="note">
                                 <?php echo $personaggio->getNota(); ?>
                             </div>
                         </div>
@@ -172,5 +172,4 @@ try {
         <script type="text/javascript" src="librerie/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="js/account.js"></script>
         <script type="text/javascript" src="js/panoramica.js"></script>
-    
 </body></html>

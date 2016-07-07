@@ -6,6 +6,7 @@ class Abilita {
     private $descrizione;
     private $id;
     private $costo;
+    private $note;
 
     /*
      *  Preleva il resto delle informazioni dal database usando l'ID
@@ -29,6 +30,7 @@ class Abilita {
         $this->descrizione = $riga['Descrizione'];
         $this->id = $riga['ID_Abilita'];
         $this->costo = $riga['Costo'];
+        $this->note = $riga['Note'];
     }
 
     public function impostaNome($nome) {
@@ -37,6 +39,10 @@ class Abilita {
 
     public function impostaDescrizione($descrizione) {
         $this->descrizione = ucfirst(strip_tags(trim($descrizione)));
+    }
+
+    public function impostaNote($note) {
+        $this->note = ucfirst(strip_tags(trim($note)));
     }
 
     public function impostaCosto($costo) {
@@ -70,6 +76,7 @@ class Abilita {
         $this->descrizione = $riga['Descrizione'];
         $this->id = $riga['ID_Abilita'];
         $this->costo = $riga['Costo'];
+        $this->note = $riga['Note'];
     }
 
     public function memorizza($conn) {
@@ -79,9 +86,9 @@ class Abilita {
         }
         //Se l'abilità è nuova vuol dire che non ha un ID associato nel database
         if ($this->id == NULL) {
-            $query = $conn->prepare("INSERT INTO `abilita`(`Nome`, `Descrizione`,`Costo`) VALUES (:nome, :desc, :costo)");
+            $query = $conn->prepare("INSERT INTO `abilita`(`Nome`, `Descrizione`,`Costo`,`Note`) VALUES (:nome, :desc, :costo, :note)");
             try {
-                $query->execute(array(":nome" => $this->nome, ":desc" => $this->descrizione, ":costo" => $this->costo));
+                $query->execute(array(":nome" => $this->nome, ":desc" => $this->descrizione, ":costo" => $this->costo,":note" => $this->note));
             } catch (Exception $e) {
                 if ($e->getCode() == '23000')
                     throw new Exception("Nome abilità già utilizzato.");
@@ -94,9 +101,9 @@ class Abilita {
 
             $this->id = $conn->lastInsertId();
         } else {
-            $query = $conn->prepare("UPDATE `abilita` SET `Nome` = :nome, `Descrizione` = :desc,`Costo` = :costo WHERE ID_Abilita = :id");
+            $query = $conn->prepare("UPDATE `abilita` SET `Nome` = :nome, `Descrizione` = :desc,`Costo` = :costo,`Note` = :note WHERE ID_Abilita = :id");
             try {
-                $query->execute(array(":nome" => $this->nome, ":desc" => $this->descrizione, ":id" => $this->id, ":costo" => $this->costo));
+                $query->execute(array(":nome" => $this->nome, ":desc" => $this->descrizione, ":id" => $this->id, ":costo" => $this->costo,":note" => $this->note));
             } catch (Exception $e) {
                 if ($e->getCode() == '23000')
                     throw new Exception("Nome abilità già utilizzato.");
@@ -125,7 +132,7 @@ class Abilita {
     }
 
     public function stampaInfo() {
-        echo $this->nome . "<br />" . $this->descrizione . "<br />" . $this->id;
+        echo $this->nome . "<br />" . $this->descrizione . "<br />" . $this->id . "<br />" . $this->note;
     }
 
 }

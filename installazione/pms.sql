@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `abilita` (
   `Nome` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `Descrizione` varchar(1500) COLLATE utf8_unicode_ci NOT NULL,
   `Costo` float NOT NULL DEFAULT '0',
+  `Note` varchar(1500) COLLATE utf8_unicode_ci,
   PRIMARY KEY (`ID_Abilita`),
   UNIQUE KEY `Nome` (`Nome`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

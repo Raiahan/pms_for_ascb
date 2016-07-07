@@ -88,7 +88,7 @@ class PG {
         if ($this->id == NULL)
             throw new Exception("Questo personaggio non ha un id");
 
-        $query = $conn->prepare("SELECT ID_Abilita,Nome,Descrizione,Costo FROM abilita,competenze WHERE Personaggio = :id  AND Abilita = ID_Abilita");
+        $query = $conn->prepare("SELECT ID_Abilita,Nome,Descrizione,Costo,Note FROM abilita,competenze WHERE Personaggio = :id  AND Abilita = ID_Abilita");
         $query->bindParam(":id", $this->id);
         $query->execute();
         $res = $query->fetchAll(PDO::FETCH_ASSOC);

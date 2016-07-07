@@ -63,7 +63,7 @@ if (!isset($nome_gioco))
                                 } else {
                                     echo "<li><a>Nessun altro pg disponibile.</a></li>";
                                 }
-                                ?> 
+                                ?>
                             </ul>
                     </li>
                     <?php }

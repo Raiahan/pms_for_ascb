@@ -65,6 +65,7 @@ try {
                                 <th><i class=" icon-resize-vertical"></i> Nome </th>
                                 <th><i class=" icon-resize-vertical"></i> Descrizione </th>
                                 <th><i class=" icon-resize-vertical"></i> Costo </th>
+                                <th><i class=" icon-resize-vertical"></i> Note </th>
                                 <th><i class=" icon-resize-vertical"></i> Cancella </th>
                             </tr>
                         </thead>
@@ -79,6 +80,7 @@ try {
                                         <td><span data-name="nome" data-pk="<?= $ab['id'] ?>" data-url="../scripts/abilita/modifica.php" data-type="text"> <?= $ab['nome'] ?> </span></td>
                                         <td><span data-name="descrizione" data-pk="<?= $ab['id'] ?>" data-url="../scripts/abilita/modifica.php" data-type="text"> <?= $ab['descrizione'] ?> </span></td>
                                         <td><span data-name="costo" data-pk="<?= $ab['id'] ?>" data-url="../scripts/abilita/modifica.php" data-type="text"> <?= $ab['costo'] ?> </span></td>
+                                        <td><span data-name="note" data-pk="<?= $ab['id'] ?>" data-url="../scripts/abilita/modifica.php" data-type="text"> <?= $ab['note'] ?> </span></td>
                                         <td>
                                             <button class="btn btn-small btn-danger">
                                                 x

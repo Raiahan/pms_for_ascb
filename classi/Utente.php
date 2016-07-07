@@ -81,7 +81,7 @@ class Utente {
             $query = $conn->prepare('INSERT INTO `utente`(`Username`, `Email`,`Pwd`,`Master`,`Attivo`) VALUES (:user, :email, :pwd, :isMaster, :isActive)');
             try {
                 $query->execute($params);
-            } 
+            }
 			catch (Exception $e) {
                 if ($e->getCode() == '23000')
                     throw new Exception("Email o Username già utilizzato.");

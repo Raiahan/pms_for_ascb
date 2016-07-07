@@ -13,4 +13,4 @@ $(document).ready(function() {
 			i.attr('class', 'icon-chevron-up');
 		}
 	});
-}); 
+});

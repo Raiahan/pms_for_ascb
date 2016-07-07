@@ -22,7 +22,7 @@ function inviamail($mittente, $nome_mittente, $destinatario, $oggetto, $corpo) {
     $mail->Body = $corpo . $footer;
 
     if (!$mail->Send()) {
-        die($mail->ErrorInfo);
+        echo $mail->ErrorInfo;
     }
 }
 

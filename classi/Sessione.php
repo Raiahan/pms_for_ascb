@@ -114,7 +114,7 @@ class Sessione {
     public function getAll($conn, $limit) {
         $query = $conn->prepare(
                 "SELECT ID_Utente, Username, addr, Master, sid, timestamp
-            FROM sessioni INNER JOIN utente 
+            FROM sessioni INNER JOIN utente
             ON sessioni.uid = utente.ID_Utente
             ORDER BY sid DESC LIMIT :max ");
         $limit = intval($limit);
@@ -137,7 +137,6 @@ class Sessione {
         $new_sess->setTimestamp(time());
         $new_sess->setAddr($addr);
         $new_sess->save($conn);
-    
         //Salvo in sessione l'ID della sessione in DB
         $_SESSION['sid'] = $new_sess->getSid();
         $info = array(
@@ -155,14 +154,14 @@ class Sessione {
             $_SESSION['idUtente'] = $utente -> getID();
             $_SESSION['master'] = $utente -> is_Master();
             return "2";
-        } 
+        }
         //Carichiamo in sessione i personaggi posseduti
             try {
                 $personaggi = $utente -> prelevaPersonaggi($conn);
                 $_SESSION['idPersonaggi'] = $personaggi;
                 $_SESSION['idUtente'] = $utente -> getID();
                 $_SESSION['master'] = $utente -> is_Master();
-            } 
+            }
             catch (Exception $e) {  //Se l'utente non ha personaggi assegnati, è inutile farlo connettere
                 return "3";
             }
@@ -171,7 +170,7 @@ class Sessione {
     public function getByUsername($username, $conn, $limit) {
         $query = $conn->prepare(
                 "SELECT ID_Utente, Username, addr, Master, sid, timestamp
-            FROM sessioni INNER JOIN utente 
+            FROM sessioni INNER JOIN utente
             ON sessioni.uid = utente.ID_Utente AND
             utente.Username = :username
             LIMIT :limit");

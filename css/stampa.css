@@ -22,11 +22,11 @@ body {
 .table-bordered th,
 .table-bordered td {
     border: 1px solid #ddd !important;
-} 
+}
 /*---*/
 hr {
     clear:both;
     position:relative;
     top:5px;
-    border-bottom: 1px dashed #000; 
+    border-bottom: 1px dashed #000;
 }
