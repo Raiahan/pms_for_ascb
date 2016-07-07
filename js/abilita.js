@@ -29,8 +29,8 @@ $(document).ready(function() {
 	});
 });
 
-function makeRow(id, nome, desc, costo) {
-	$('#abilityTable tr:first').after('<tr data-pk="' + id + '"><td><span data-name="nome" data-pk="' + id + '" data-url="../scripts/abilita/modifica.php" data-type="text">' + nome + '</span></td><td><span data-name="descrizione" data-pk="' + id + '" data-url="../scripts/abilita/modifica.php" data-type="text">' + desc + '</span></td><td><span data-name="costo" data-pk="' + id + '" data-url="../scripts/abilita/modifica.php" data-type="text">' + costo + '</span></td><td><button class=\'btn btn-small btn-danger\'>x</button></td></tr>');
+function makeRow(id, nome, desc, costo,note) {
+	$('#abilityTable tr:first').after('<tr data-pk="' + id + '"><td><span data-name="nome" data-pk="' + id + '" data-url="../scripts/abilita/modifica.php" data-type="text">' + nome + '</span></td><td><span data-name="descrizione" data-pk="' + id + '" data-url="../scripts/abilita/modifica.php" data-type="text">' + desc + '</span></td><td><span data-name="costo" data-pk="' + id + '" data-url="../scripts/abilita/modifica.php" data-type="text">' + costo + '</span></td><td><span data-name="note" data-pk="' + id + '" data-url="../scripts/abilita/modifica.php" data-type="text">' + note + '</span></td><td><button class=\'btn btn-small btn-danger\'>x</button></td></tr>');
 	$('td > span').editable();
 	$('#abilityTable td button').on('click', remove);
 }
@@ -56,7 +56,7 @@ function creaAbilita() {
 		success : function(risposta) {
 			lanciaNotifica(risposta.mess, "success");
 			$('#modale_nuova_ab').modal('hide');
-			makeRow(risposta.id, nome, descrizione, costo);
+			makeRow(risposta.id, nome, descrizione, costo,note);
 		},
 		error : function(XMLHTTP) {
 			lanciaNotifica(XMLHTTP.responseText, "error");

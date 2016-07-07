@@ -20,6 +20,7 @@ $conn = connetti();
 $nome = $_POST['nome'];
 $desc = $_POST['desc'];
 $costo = $_POST['costo'];
+$note = $_POST['note'];
 
 $newAb = new Abilita();
 
@@ -27,6 +28,7 @@ $newAb->impostaNome($nome);
 $newAb->impostaDescrizione($desc);
 try {
 $newAb->impostaCosto($costo);
+$newAb->impostaNote($note);
 }
 catch(Exception $e) {
     errore($e->getMessage());
