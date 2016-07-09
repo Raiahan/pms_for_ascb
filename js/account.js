@@ -85,6 +85,7 @@ function cambiaPassword() {
 
 function lanciaNotifica(testo, tipo) {
 	new PNotify({
+		styling: "bootstrap3",
 		text : testo,
 		type : tipo
 	});
