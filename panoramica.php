@@ -101,7 +101,7 @@ try {
                                 else {
                                     echo "<table class=\"table table-hover table-bordered \" id=\"abilita\"><thead><th>Abilità</th><th>Descrizione</th><th>Costo</th><th>Note</th></thead>";
                                     foreach ($lista_abilita as $abilita) {
-                                        echo "<td>" . $abilita['Nome'] . "</td><td>" . $abilita['Descrizione'] . "</td><td>" . $abilita['Costo'] . "</td><td>" .$abilita['Note'] . "</td>";
+                                        echo "<tr><td>" . $abilita['Nome'] . "</td><td>" . $abilita['Descrizione'] . "</td><td>" . $abilita['Costo'] . "</td><td>" .$abilita['Note'] . "</td></tr>";
                                     }
                                     echo "<br>";
                                 }

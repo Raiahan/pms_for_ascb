@@ -1,16 +1,9 @@
 /*
  * CSS Comune a tutte le pagine
  */
-@import url("../bootstrap/css/bootstrap-theme.min.css");
-@font-face {
-    font-family: 'Skolar'; /* nome del font */
-    src: url(SkolarCyrillic_Regular.otf); /*url al font da utilizzare*/
-    src: local('Skolar'), url('SkolarCyrillic_Regular.otf') format('truetype');
-}
 html,
 body {
     height: 100%;
-    font-family: Skolar;
 }
 #wrap {
     min-height: 100%;

@@ -37,7 +37,8 @@ try {
         <meta name="description" content="Editor Abilità Personaggio">
         <meta name="author" content="Mario Villani">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen" />
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="bootstrap-select/css/bootstrap-select.min.css" />
         <link href="librerie/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
         <link href="bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/comune.css" />
@@ -100,12 +101,12 @@ try {
                 <?php
                 try {
                     $lista_abilita = Master::getAbilita($conn);
-                    echo "<select id=\"lista_abilita\">";
+                    echo "<select class=\"selectpicker\" id=\"lista_abilita\" data-live-search=\"true\">";
                     foreach ($lista_abilita as $abilita) {
                         echo "<option value=\"" . $abilita['id'] . "\" >" . $abilita['nome'] . " (" . $abilita['costo'] . ")</option>";
                     }
                     ?>
-                    </select><br />
+                    </select><br /><br />
                     <button id="pulsante_assegna" style="margin-bottom:10px;" class="btn btn-primary btn-large">Assegna abilità</button>
                     <?php } catch (Exception $e) {
 					echo "Non hai creato nessuna abilità.";
@@ -121,6 +122,7 @@ try {
  ?>
         <script type="text/javascript" src="librerie/jquery.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bootstrap-select/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="librerie/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="js/abilita_pg.js"></script>
         <script type="text/javascript" src="js/account.js"></script>
