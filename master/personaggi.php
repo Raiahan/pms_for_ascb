@@ -95,8 +95,8 @@ try {
         </div>
         <?php require "../componenti/footer.php"; ?>
         <script type="text/javascript" src="../libs-frontend/jquery.js"></script>
-        <script type="text/javascript" src="../libs-frontend/bootstrap-select/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="../libs-frontend/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../libs-frontend/bootstrap-select/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="../libs-frontend/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="../js/account.js"></script>
         <script type="text/javascript" src="../js/personaggi.js"></script>

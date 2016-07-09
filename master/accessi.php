@@ -34,8 +34,9 @@ else
         <meta name="description" content="Gestione Accessi">
         <meta name="author" content="Mario Villani">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../libs-frontend/bootstrap/css/bootstrap.min.css" media="screen">
-        <link href="../libs-frontend/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../libs-frontend/bootstrap/css/bootstrap.min.css" media="screen" />
+        <link rel="stylesheet" href="../libs-frontend/bootstrap-select/css/bootstrap-select.min.css" />
+        <link href="../libs-frontend/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="../css/comune.css">
         <style>
             .table thead tr.info th {
@@ -57,15 +58,17 @@ else
                 <h2>Registro degli accessi al sistema</h2>
                 <div class="row">
                     <form method="POST" action="accessi.php">
-                        Risultati : <select id="maxShow" name="maxShow">
+                        Risultati : <select class="selectpicker" id="maxShow" name="maxShow">
                             <option value="25"> 25 </option>
                             <option value="50"> 50 </option>
                             <option value="100"> 100 </option>
                             <option value="200"> 200 </option>
                         </select>
-                        <input class="form-control" placeholder="Filtra per nome utente" name="username" value="<?php if (isset($username)) echo $username; ?>" type="text"><br>
-                        <button type="submit" class="btn btn-primary btn-lg">Filtra</button>
                     </form>
+                </div>
+                <div class="row" style="margin-top:10px;margin-bottom:10px;">
+                        <input class="form-control" placeholder="Filtra per nome utente" name="username" value="<?php if (isset($username)) echo $username; ?>" type="text" />
+                        <button style="margin-top:10px;margin-bottom:10px" type="submit" class="btn btn-primary btn-lg">Filtra</button>
                 </div>
                 <div class="row">
                     <table class="table table-bordered table-hover tablesorter" id="sessionTable">
@@ -110,6 +113,7 @@ else
             document.getElementById('maxShow').value = "<?php echo $limit;?>";
         </script>
         <script type="text/javascript" src="../libs-frontend/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../libs-frontend/bootstrap-select/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="../libs-frontend/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="../js/account.js"></script>
         <script type="text/javascript" src="../js/accessi.js"></script>

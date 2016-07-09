@@ -29,7 +29,7 @@ if (!isset($nome_gioco))
 					<input class="form-control" placeholder="Password" id="password_utente_conf" type="password">
 					<br>
 					E' un master?
-					<select id="master">
+					<select class="form-control" id="master">
 						<option value="0">No</option>
 						<option value="1">Si</option>
 					</select>
