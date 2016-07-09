@@ -113,7 +113,7 @@ try {
                     <div class="row">
                         <textarea class="form-control" id="nota" rows="5" class="span4"><?php echo $personaggio -> getNota(); ?></textarea>
                     </div>
-                    <button style="margin-bottom:10px;" class="btn btn-primary btn-lg" id="pulsante_salva_master">Salva</button>
+                    <button style="margin-top:10px;margin-bottom:10px;" class="btn btn-primary btn-lg" id="pulsante_salva_master">Salva</button>
                     <?php } if ($_SESSION['master'] == 0)
                     require "componenti/modale_messaggio.php";
                     require "componenti/modale_account.php";
