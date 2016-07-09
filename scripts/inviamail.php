@@ -11,9 +11,8 @@ function inviamail($mittente, $nome_mittente, $destinatario, $oggetto, $corpo) {
     $mail->CharSet = 'UTF-8';
     $mail->SetLanguage('it');
     $mail->Host = "localhost";
-    $mail->From = $mittente;
-    $mail->FromName = $nome_mittente;
-    $mail->AddAddress($destinatario);
+    $mail->SetFrom($mittente,$nome_mittente);
+    $mail->AddAddress($destinatario,$destinatario);
     $mail->WordWrap = 50;
     $mail->IsHTML(true);
     // Set email format to HTML
@@ -25,5 +24,4 @@ function inviamail($mittente, $nome_mittente, $destinatario, $oggetto, $corpo) {
         echo $mail->ErrorInfo;
     }
 }
-
 ?>
