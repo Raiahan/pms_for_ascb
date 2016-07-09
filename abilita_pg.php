@@ -101,7 +101,7 @@ try {
                 <?php
                 try {
                     $lista_abilita = Master::getAbilita($conn);
-                    echo "<select class=\"selectpicker\" id=\"lista_abilita\" data-live-search=\"true\">";
+                    echo "<select class=\"selectpicker\" id=\"lista_abilita\" data-size=\"15\" data-live-search=\"true\">";
                     foreach ($lista_abilita as $abilita) {
                         echo "<option value=\"" . $abilita['id'] . "\" >" . $abilita['nome'] . " (" . $abilita['costo'] . ")</option>";
                     }
