@@ -155,7 +155,7 @@ class Utente {
     }
 
     public function impostaPassword($nuova_password) {
-        require_once dirname(__FILE__) . "/../librerie/PHPAss/PasswordHash.php";
+        require_once dirname(__FILE__) . "/../libs-backend/PHPAss/PasswordHash.php";
         $t_hasher = new PasswordHash(8, FALSE);
         $hash = $t_hasher->HashPassword(trim($nuova_password));
         $this->password = $hash;

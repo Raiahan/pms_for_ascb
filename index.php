@@ -70,7 +70,7 @@ function login($user, $password, $conn) {
 		return "0";
 	}
 	//Login fallito se password non corretta
-	require "librerie/PHPAss/PasswordHash.php";
+	require "libs-backend/PHPAss/PasswordHash.php";
 	$t_hasher = new PasswordHash(8, FALSE);
 	if (!$t_hasher -> CheckPassword($password, $utente -> getPassword())) {
 		return "0";
@@ -91,7 +91,7 @@ function login($user, $password, $conn) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Pagina login">
 		<meta name="author" content="Mario Villani">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="libs-frontend/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/comune.css">
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -153,8 +153,8 @@ function login($user, $password, $conn) {
 		<?php
 		require "componenti/footer.php";
 		?>
-		<script type="text/javascript" src="librerie/jquery.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="libs-frontend/jquery.js"></script>
+		<script src="libs-frontend/bootstrap/js/bootstrap.min.js"></script>
 
 	</body>
 </html>

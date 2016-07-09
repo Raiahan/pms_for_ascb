@@ -47,7 +47,7 @@ try {
 } catch (Exception $e) {
     errore($e->getMessage());
 }
-require_once '../../librerie/PHPThumbFactory/ThumbLib.inc.php';
+require_once '../../libs-backend/PHPThumbFactory/ThumbLib.inc.php';
 try {
     $thumb = PhpThumbFactory::create($_FILES['nuovo_avatar']['tmp_name']);
 } catch (Exception $e) {

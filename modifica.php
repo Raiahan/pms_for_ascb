@@ -34,9 +34,9 @@ try {
         <meta name="description" content="Gestione">
         <meta name="author" content="Mario Villani">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
-        <link rel="stylesheet" href="librerie/jasny-bootstrap.min.css">
-        <link href="librerie/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="libs-frontend/bootstrap/css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="libs-frontend/jasny-bootstrap.min.css">
+        <link href="libs-frontend/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/comune.css">
         <style>
             #avatar {
@@ -123,11 +123,11 @@ try {
             <?php
                 require "componenti/footer.php";
             ?>
-        <script type="text/javascript" src="librerie/jquery.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="librerie/jasny-bootstrap.min.js"></script>
-        <script type="text/javascript" src="librerie/jquery.form.min.js"></script>
-        <script type="text/javascript" src="librerie/jquery.pnotify.min.js"></script>
+        <script type="text/javascript" src="libs-frontend/jquery.js"></script>
+        <script type="text/javascript" src="libs-frontend/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="libs-frontend/jasny-bootstrap.min.js"></script>
+        <script type="text/javascript" src="libs-frontend/jquery.form.min.js"></script>
+        <script type="text/javascript" src="libs-frontend/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="js/account.js"></script>
         <script type="text/javascript" src="js/modifica.js"></script>
 

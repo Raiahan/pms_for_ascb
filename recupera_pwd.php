@@ -50,7 +50,7 @@ function richiedi_pwd() {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Recupera password">
 <meta name="author" content="Mario Villani">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="libs-frontend/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/comune.css">
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -93,7 +93,7 @@ Recupera
 require "componenti/footer.php";
 ?>
 <!-- /container -->
-<script type="text/javascript" src="librerie/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="libs-frontend/jquery.js"></script>
+<script src="libs-frontend/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

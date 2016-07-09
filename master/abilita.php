@@ -27,8 +27,8 @@ try {
         <meta name="description" content="Editor Abilità">
         <meta name="author" content="Tubelli Santolo">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" media="screen" />
-        <link href="../librerie/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../libs-frontend/bootstrap/css/bootstrap.min.css" media="screen" />
+        <link href="../libs-frontend/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
         <link href="../bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet" />
         <link rel="stylesheet" href="../css/comune.css" />
         <style>
@@ -95,12 +95,12 @@ try {
                 <?php require_once "../componenti/modale_nuova_abilita.php"; ?>
             </div><div id="push"></div></div>
             <?php require "../componenti/footer.php"; ?>
-        <script type="text/javascript" src="../librerie/jquery.js"></script>
-        <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../librerie/jquery.pnotify.min.js"></script>
+        <script type="text/javascript" src="../libs-frontend/jquery.js"></script>
+        <script type="text/javascript" src="../libs-frontend/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../libs-frontend/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="../js/abilita.js"></script>
         <script type="text/javascript" src="../js/account.js"></script>
         <script src="../bootstrap-editable/js/bootstrap-editable.min.js"></script>
-        <script type="text/javascript" src="../librerie/jquery.tablesorter.min.js"></script>
+        <script type="text/javascript" src="../libs-frontend/jquery.tablesorter.min.js"></script>
     </body>
 </html>

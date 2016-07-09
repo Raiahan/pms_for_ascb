@@ -27,7 +27,7 @@ try {
 //Prendo vecchio hash
 $vecchia_password = $utente->getPassword();
 //Verifichiamo se la password vecchia è corretta.
-require_once "../../librerie/PHPAss/PasswordHash.php";
+require_once "../../libs-backend/PHPAss/PasswordHash.php";
 $t_hasher = new PasswordHash(8, FALSE);
 if (!$t_hasher->CheckPassword($_POST['vecchia_pwd'], $vecchia_password)) {
     errore("La vecchia password non è corretta.");

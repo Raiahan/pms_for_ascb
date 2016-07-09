@@ -5,7 +5,7 @@
  */
 
 function inviamail($mittente, $nome_mittente, $destinatario, $oggetto, $corpo) {
-    require_once dirname(__FILE__) . "/../librerie/PHPMailer/class.phpmailer.php";
+    require_once dirname(__FILE__) . "/../libs-backend/PHPMailer/class.phpmailer.php";
 
     $mail = new PHPMailer();
     $mail->CharSet = 'UTF-8';
