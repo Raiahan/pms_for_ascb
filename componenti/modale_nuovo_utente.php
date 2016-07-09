@@ -14,7 +14,7 @@ if (!isset($nome_gioco))
 			<div class="modal-body text-center">
 				<p>
 					Username :
-					<input class="form-control" placeholder="Nome personaggio" id="username_utente" type="text">
+					<input class="form-control" placeholder="Nome utente" id="username_utente" type="text">
 					<br>
 					Email :
 					<input class="form-control" placeholder="Email utente" id="email_utente" type="email">
