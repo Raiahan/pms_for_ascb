@@ -34,6 +34,7 @@ try {
         <meta name="author" content="Mario Villani">
         <meta charset="utf-8">
         <link rel="stylesheet" href="../libs-frontend/bootstrap/css/bootstrap.min.css" media="screen" />
+        <link rel="stylesheet" href="../libs-frontend/bootstrap-select/css/bootstrap-select.min.css" />
         <link href="../libs-frontend/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="../css/comune.css" />
         <style>
@@ -94,6 +95,7 @@ try {
         </div>
         <?php require "../componenti/footer.php"; ?>
         <script type="text/javascript" src="../libs-frontend/jquery.js"></script>
+        <script type="text/javascript" src="../libs-frontend/bootstrap-select/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="../libs-frontend/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../libs-frontend/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="../js/account.js"></script>

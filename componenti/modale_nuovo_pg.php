@@ -17,7 +17,7 @@ if (!isset($nome_gioco))
 					<input class="form-control" placeholder="Nome personaggio" id="nome_personaggio" type="text">
 					<br>
 					Proprietario :
-					<select id="id_proprietario">
+					<select class="selectpicker" data-size="15" data-live-search="true" id="id_proprietario">
 						<?php
 						try {
 							$utenti = Master::getUtenti($conn);
