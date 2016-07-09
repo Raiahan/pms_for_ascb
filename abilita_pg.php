@@ -38,7 +38,7 @@ try {
         <meta name="author" content="Mario Villani">
         <meta charset="utf-8">
         <link rel="stylesheet" href="libs-frontend/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="bootstrap-select/css/bootstrap-select.min.css" />
+        <link rel="stylesheet" href="libs-frontend/bootstrap-select/css/bootstrap-select.min.css" />
         <link href="libs-frontend/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
         <link href="libs-frontend/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/comune.css" />
@@ -122,7 +122,7 @@ try {
  ?>
         <script type="text/javascript" src="libs-frontend/jquery.js"></script>
         <script type="text/javascript" src="libs-frontend/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="bootstrap-select/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="libs-frontend/bootstrap-select/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="libs-frontend/jquery.pnotify.min.js"></script>
         <script type="text/javascript" src="js/abilita_pg.js"></script>
         <script type="text/javascript" src="js/account.js"></script>
