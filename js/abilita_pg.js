@@ -18,8 +18,8 @@ $(document).ready(function() {
     });
 });
 
-function makeRow(id_abilita, nome_abilita, costo) {
-    $('#abilityTable tr:last').after('<tr id=' + id_abilita + '><td>' + nome_abilita + '</td><td>' + costo + '</td><td><button class=\'btn btn-small btn-danger\'>x</button></td></tr>');
+function makeRow(id_abilita, nome_abilita, costo, note_abilita) {
+    $('#abilityTable tr:last').after('<tr id=' + id_abilita + '><td>' + nome_abilita + '</td><td>' + costo + '</td><td>' + note_abilita + '</td><td><button class=\'btn btn-small btn-danger\'>x</button></td></tr>');
     $('#abilityTable td button').on('click', remove);
 }
 
@@ -59,11 +59,6 @@ function remove() {
 function assegna() {
     var id_personaggio = $('#id_pg').attr("pg");
     var id_abilita = $('#lista_abilita').val();
-    var nome_abilita = $('#lista_abilita option:selected').text();
-    var inizio = nome_abilita.lastIndexOf("(");
-    var fine = nome_abilita.lastIndexOf(")");
-    var costo_abilita = nome_abilita.substring(inizio + 1, fine);
-    nome_abilita = nome_abilita.replace("(" + costo_abilita + ")", "");
     var notifica = lanciaNotifica("Assegnazione in corso...", "info");
     var opzioni = {
         type: "POST",
@@ -79,14 +74,15 @@ function assegna() {
         success: function(risposta) {
             lanciaNotifica(risposta.mess, "success");
             var punti_spesi = document.getElementById("punti_spesi");
-            costo_abilita = parseFloat(costo_abilita);
+            var costo_abilita = parseFloat(risposta.costo);
             var somma = parseFloat(punti_spesi.innerHTML) + costo_abilita;
             punti_spesi.innerHTML = somma.toFixed(1);
-            makeRow(id_abilita, nome_abilita, costo_abilita);
-            $("#pulsante_nuovo").removeAttr("disabled");
+            makeRow(id_abilita, risposta.nome, costo_abilita, risposta.note);
         },
         error: function(XMLHTTP) {
             lanciaNotifica(XMLHTTP.responseText, "error");
+        },
+        complete: function() {
             $("#pulsante_nuovo").removeAttr("disabled");
         }
     };

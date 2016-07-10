@@ -45,5 +45,8 @@ try {
 }
 header('Content-Type: application/json');
 $json_res['mess'] = "Abilità aggiunta con successo";
+$json_res['note'] = $ab->getNote();
+$json_res['nome'] = $ab->getNome();
+$json_res['costo'] = $ab->getCosto();
 echo json_encode($json_res);
 ?>

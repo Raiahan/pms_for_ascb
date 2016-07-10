@@ -55,6 +55,13 @@ class Abilita {
         return $this->costo;
     }
 
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function getNote() {
+        return $this->note;
+    }
     /*
      *  Preleva il resto delle informazioni dal database usando il nome dell'abilità
      *  Lancia eccezione se l'abilità non esiste o ha già gli altri campi fetchati.

@@ -71,6 +71,7 @@ try {
                             <tr class="info">
                                 <th><i class=" icon-resize-vertical"> </i> Nome </th>
                                 <th><i class=" icon-resize-vertical"> </i> Costo </th>
+                                <th><i class=" icon-resize-vertical"> </i> Note </th>
                                 <th><i class=" icon-resize-vertical"> </i> Rimuovi abilità </th>
                             </tr>
                         </thead>
@@ -84,6 +85,7 @@ try {
                                     <tr id=<?php echo $ab['ID_Abilita']; ?>>
                                         <td><?php echo $ab['Nome'] ?></td>
                                         <td><?php echo $ab['Costo']; ?></td>
+                                        <td><?php echo $ab['Note']; ?></td>
                                         <td>
                                             <button class="btn btn-small btn-danger">
                                                 x
