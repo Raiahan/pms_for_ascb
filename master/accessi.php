@@ -63,12 +63,10 @@ else
                             <option value="50"> 50 </option>
                             <option value="100"> 100 </option>
                             <option value="200"> 200 </option>
-                        </select>
+                            </select>
+                            <input style="margin-top:10px;margin-bottom:10px" class="form-control" placeholder="Filtra per nome utente" name="username" value="<?php if (isset($username)) echo $username; ?>" type="text" />
+                            <button style="margin-top:10px;margin-bottom:10px" type="submit" class="btn btn-primary btn-lg">Filtra</button>
                     </form>
-                </div>
-                <div class="row" style="margin-top:10px;margin-bottom:10px;">
-                        <input class="form-control" placeholder="Filtra per nome utente" name="username" value="<?php if (isset($username)) echo $username; ?>" type="text" />
-                        <button style="margin-top:10px;margin-bottom:10px" type="submit" class="btn btn-primary btn-lg">Filtra</button>
                 </div>
                 <div class="row">
                     <table class="table table-bordered table-hover tablesorter" id="sessionTable">
