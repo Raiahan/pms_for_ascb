@@ -30,11 +30,11 @@ try {
 } catch (Exception $e) {
 	$lista_abilita = array();
 }
-$nome = $personaggio ->getNome();
-$razza = $personaggio ->getRazza();
-$regno = $personaggio ->getRegno();
-$punti = $personaggio -> getPunti();
-$puntiSpesi = $personaggio -> getPuntiSpesi();
+$nome = utf8_decode($personaggio ->getNome());
+$razza = utf8_decode($personaggio ->getRazza());
+$regno = utf8_decode($personaggio ->getRegno());
+$punti = utf8_decode($personaggio -> getPunti());
+$puntiSpesi = utf8_decode($personaggio -> getPuntiSpesi());
 require_once('../libs-backend/FPDI/fpdf.php');
 require_once('../libs-backend/FPDI/fpdi.php');
 // initiate FPDI
@@ -48,7 +48,7 @@ $tplIdx = $pdf->importPage(1);
 // use the imported page and place it at point 10,10 with a width of 100 mm
 $pdf->useTemplate($tplIdx);
 
-$titolo = $nome_gioco . " " . $nome;
+$titolo = utf8_decode($nome_gioco . " " . $nome);
 $pdf->SetTitle($titolo);
 $pdf->SetFont('Helvetica','B');
 $pdf->SetFontSize(10);
@@ -62,15 +62,15 @@ $pdf->Write(0, $regno);
 $pdf->SetFontSize(14);
 $pdf->SetXY(122, 45);
 $pdf->Write(2, $punti);
-$pdf->SetXY(151, 45);
+$pdf->SetXY(150, 45);
 $pdf->Write(2, $puntiSpesi);
 $pdf->SetFontSize(10);
 $y_offset = 70;
 $pdf->SetXY(101.5, $y_offset);
 foreach ($lista_abilita as $abilita) {
-	$pdf->Write(0,$abilita['Nome']);
+	$pdf->Write(0,utf8_decode($abilita['Nome']));
 	$pdf->SetXY(189, $y_offset);
-	$pdf->Write(0,$abilita['Costo']);
+	$pdf->Write(0,utf8_decode($abilita['Costo']));
 	$y_offset = $y_offset + 6.2;
 	$pdf->SetXY(101.5, $y_offset);
 }
