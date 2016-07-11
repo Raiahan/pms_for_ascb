@@ -23,7 +23,7 @@ if (!isset($nome_gioco))
 					<input class="form-control" placeholder="Costo" id="costo_abilita" type="text">
 					<br>
 					Note:
-					<input class="form-control" placeholder="Costo" id="note_abilita" type="text">
+					<input class="form-control" placeholder="Note" id="note_abilita" type="text">
 					<br>
 					<button class="btn btn-primary btn-lg" id="tasto_aggiungi">
 						Crea Abilità

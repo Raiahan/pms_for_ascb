@@ -81,6 +81,7 @@ try {
                             <p class="lead"><span style="color:#004ACC">Punti totali : </span><span id="punti"><?php echo $personaggio -> getPunti(); ?></span></p>
                             <p class="lead"><span style="color:#004ACC">Punti spesi : </span><span id="punti_s"><?php echo $personaggio -> getPuntiSpesi(); ?></span></p>
                             <button id="pulsante_qr" class="btn btn-primary btn-lg" type="button">Codice QR</button>
+                            <button id="pulsante_qr" onclick="window.open('printSheet/printPGSheet.php?id=<?php echo $personaggio->getID();?>','_blank');" class="btn btn-primary btn-lg" type="button">Stampa Scheda</button>
                         </div>
                     </div>
                 </div>

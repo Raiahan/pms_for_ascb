@@ -13,7 +13,7 @@ function check_collegato() {
 }
 
 //Verifica se sono stati passati gli ID per visualizzare i personaggi.
-//Viene verificato in modifica.php,panoramica.php,contatta.php e abilità_pg.php che sono quelli riguardanti il singolo personaggio.
+//Viene verificato in modifica.php,panoramica.php,contatta.php e abilità_pg.php che sono quelli riguardanti il singolo personaggio.Stesso vale per printPGSheet.php(stampa scheda)
 function controlla_parametri() {
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
         errore("Parametri mancanti");
