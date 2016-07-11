@@ -100,6 +100,10 @@ try {
                     <div class="row">
                         <input class="form-control" id="regno_pg" placeholder="Regno" value="<?php echo $personaggio -> getRegno(); ?>" type="text">
                     </div>
+                    <h2>Razza</h2>
+                    <div class="row">
+                        <input class="form-control" id="razza_pg" placeholder="Razza" value="<?php echo $personaggio -> getRazza(); ?>" type="text">
+                    </div>
                     <h2>Punti</h2>
                     <div class="row">
                         <input class="form-control" id="punti_pg" placeholder="Punti" value="<?php echo $personaggio -> getPunti(); ?>" type="text">

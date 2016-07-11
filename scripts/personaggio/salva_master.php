@@ -32,6 +32,7 @@ try {
 }
 $pg_da_modificare->impostaNome($_POST['nome']);
 $pg_da_modificare->impostaRegno($_POST['regno']);
+$pg_da_modificare->impostaRazza($_POST['razza']);
 $pg_da_modificare->impostaPunti($_POST['punti']);
 if (isset($_POST['nota']) && !empty($_POST['nota']))
     $pg_da_modificare->impostaNota($_POST['nota']);

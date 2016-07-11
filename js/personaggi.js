@@ -82,7 +82,7 @@ function cancella() {
  * Crea il box con le info del nuovo personaggio. Viene invocata quando il server dà l'ok sulla creazione del nuovo pg.
  */
 function costruisciBoxPg(id_personaggio, nome_personaggio, proprietario) {
-    var markup = '<div class="thumbnail clearfix"><img style="margin-right:10px" class="pull-left span2 clearfix" alt="Avatar di ' + nome_personaggio + '" src="../avatars/thumbnails/thumb_default.jpg"><div class="caption"><a class="btn btn-primary icon pull-right" href="../panoramica.php?id=' + id_personaggio + '">Apri scheda</a><h4><a href="#">' + nome_personaggio + '</a></h4><small class="pull-left"><b>Regno: </b>Nessuno</small><br /><small class="pull-left"><b>Proprietario: </b>' + proprietario + '</small><button class="btn btn-danger hidden pull-right">x</button></div></div>';
+    var markup = '<div class="thumbnail clearfix"><img style="margin-right:10px" class="pull-left span2 clearfix" alt="Avatar di ' + nome_personaggio + '" src="../avatars/thumbnails/thumb_default.jpg"><div class="caption"><h4><a href="../panoramica.php?id='+id_personaggio+'">' + nome_personaggio + '</a></h4><small class="pull-left"><b>Regno: </b>Nessuno</small><br /><small class="pull-left"><b>Proprietario: </b>' + proprietario + '</small><button class="btn btn-danger hidden pull-right">x</button></div></div>';
 
     var btn = $("#lista_personaggi").append(markup).find('button:last');
 

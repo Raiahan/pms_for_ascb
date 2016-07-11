@@ -77,6 +77,7 @@ try {
                             <h1 id="nome"><?php echo $personaggio->getNome(); ?></h1>
                             <p class="lead" id="desc"><?php echo $personaggio->getDescrizione(); ?></p>
                             <p class="lead"><span style="color:#004ACC">Regno : </span><span id="regno"><?php echo $personaggio->getRegno(); ?></span></p>
+                            <p class="lead"><span style="color:#004ACC">Razza : </span><span id="regno"><?php echo $personaggio->getRazza(); ?></span></p>
                             <p class="lead"><span style="color:#004ACC">Punti totali : </span><span id="punti"><?php echo $personaggio -> getPunti(); ?></span></p>
                             <p class="lead"><span style="color:#004ACC">Punti spesi : </span><span id="punti_s"><?php echo $personaggio -> getPuntiSpesi(); ?></span></p>
                             <button id="pulsante_qr" class="btn btn-primary btn-lg" type="button">Codice QR</button>

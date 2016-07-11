@@ -80,6 +80,7 @@ function salvaInformazioniMaster() {
     var regno = $('#regno_pg').val();
     var punti = $('#punti_pg').val();
     var nota = $('#nota').val();
+    var razza = $('#razza_pg').val();
     var notifica = lanciaNotifica("Invio informazioni...", "info");
     var id_personaggio = $('#id_pg').attr("pg");
     var opzioni = {
@@ -93,6 +94,7 @@ function salvaInformazioniMaster() {
             nome: nome,
             regno: regno,
             punti: punti,
+            razza: razza,
             nota: nota
         },
         success: function(messaggio) {

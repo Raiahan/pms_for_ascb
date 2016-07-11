@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `personaggio` (
   `Nome` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `Descrizione` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Regno` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'Nessuno',
+  `Razza` varchar(50) COLLATE utf8_unicode_ci DEFAULT '?',
   `Background` varchar(10000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Avatar` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Punti` int(11) NOT NULL DEFAULT '0',

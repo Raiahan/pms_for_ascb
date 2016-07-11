@@ -8,6 +8,7 @@ class PG {
     private $proprietario;
     private $id;
     private $regno;
+    private $razza;
     private $avatar;
     private $punti;
     private $punti_spesi;
@@ -33,6 +34,7 @@ class PG {
             $riga['Background'] = "Nessun background inserito.";
         }
         $this->background = $riga['Background'];
+        $this->razza = $riga['Razza'];
         $this->regno = $riga['Regno'];
         $this->id = $riga['ID_Personaggio'];
         if ($riga['Avatar'] == NULL)
@@ -50,14 +52,14 @@ class PG {
             throw new Exception("Manca il nome del personaggio");
         }
         if ($this->id == NULL) {
-            $params = array(":nome" => $this->nome, ":bg" => $this->background, ":proprietario" => $this->proprietario, ":avt" => $this->avatar, ":desc" => $this->descrizione, ":regno" => $this->regno, ":punti" => $this->punti, ":nota" => $this->nota);
-            $query = $conn->prepare("INSERT INTO `personaggio`(`Nome`, `Background`,`Avatar`,`Descrizione`,`Regno`,`Proprietario`,`Punti`,`Nota`) VALUES (:nome, :bg, :avt, :desc, :regno, :proprietario,:punti,:nota)");
+            $params = array(":nome" => $this->nome, ":bg" => $this->background, ":proprietario" => $this->proprietario, ":avt" => $this->avatar,":razza" => $this->razza, ":desc" => $this->descrizione, ":regno" => $this->regno, ":punti" => $this->punti, ":nota" => $this->nota);
+            $query = $conn->prepare("INSERT INTO `personaggio`(`Nome`, `Background`,`Avatar`,`Razza`,`Descrizione`,`Regno`,`Proprietario`,`Punti`,`Nota`) VALUES (:nome, :bg, :avt,:razza, :desc, :regno, :proprietario,:punti,:nota)");
             $query->execute($params);
             $this->id = $conn->lastInsertId();
             return $this->id;
         } else {
-            $params = array(":id" => $this->id, ":nome" => $this->nome, ":bg" => $this->background, ":avt" => $this->avatar, ":proprietario" => $this->proprietario, ":desc" => $this->descrizione, ":regno" => $this->regno, ":punti" => $this->punti, ":nota" => $this->nota);
-            $query = $conn->prepare("UPDATE  `personaggio` SET `Nome`= :nome, `Regno` = :regno, `Proprietario` = :proprietario, `Descrizione` = :desc, `Background` = :bg, `Avatar` = :avt, `Punti` = :punti, `Nota` = :nota WHERE `ID_Personaggio` = :id");
+            $params = array(":id" => $this->id, ":nome" => $this->nome, ":bg" => $this->background, ":avt" => $this->avatar,":razza" => $this->razza, ":proprietario" => $this->proprietario, ":desc" => $this->descrizione, ":regno" => $this->regno, ":punti" => $this->punti, ":nota" => $this->nota);
+            $query = $conn->prepare("UPDATE  `personaggio` SET `Nome`= :nome, `Regno` = :regno, `Proprietario` = :proprietario, `Descrizione` = :desc, `Background` = :bg, `Avatar` = :avt, `Razza` = :razza, `Punti` = :punti, `Nota` = :nota WHERE `ID_Personaggio` = :id");
             $query->execute($params);
         }
     }
@@ -126,6 +128,10 @@ class PG {
         $this->descrizione = strip_tags(ucfirst(trim($descrizione)));
     }
 
+    public function impostaRazza($razza) {
+        $this->razza = strip_tags(ucfirst(trim($razza)));
+    }
+
     public function impostaAvatar($avatar) {
         $this->avatar = $avatar;
     }
@@ -156,6 +162,10 @@ class PG {
             return "Nessuno";
         }
         return $this->regno;
+    }
+
+    public function getRazza() {
+        return $this->razza;
     }
 
     public function getID() {
