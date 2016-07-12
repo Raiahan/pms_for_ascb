@@ -48,7 +48,7 @@ $tplIdx = $pdf->importPage(1);
 // use the imported page and place it at point 10,10 with a width of 100 mm
 $pdf->useTemplate($tplIdx);
 
-$titolo = utf8_decode($nome_gioco . " " . $nome);
+$titolo = utf8_decode($nome_gioco . " - " . $nome);
 $pdf->SetTitle($titolo);
 $pdf->SetFont('Helvetica','B');
 $pdf->SetFontSize(10);
@@ -65,13 +65,13 @@ $pdf->Write(2, $punti);
 $pdf->SetXY(150, 45);
 $pdf->Write(2, $puntiSpesi);
 $pdf->SetFontSize(10);
-$y_offset = 70;
+$y_offset = 66;
 $pdf->SetXY(101.5, $y_offset);
 foreach ($lista_abilita as $abilita) {
 	$pdf->Write(0,utf8_decode($abilita['Nome']));
 	$pdf->SetXY(189, $y_offset);
 	$pdf->Write(0,utf8_decode($abilita['Costo']));
-	$y_offset = $y_offset + 6.2;
+	$y_offset = $y_offset + 4;
 	$pdf->SetXY(101.5, $y_offset);
 }
 $pdf->Output($titolo . '.pdf','I');
