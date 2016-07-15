@@ -86,6 +86,8 @@ foreach ($personaggi as $pg) {
 	array_push($pdf_files,array($titolo . '.pdf',$pdf->Output($titolo . '.pdf','S')));
 }
 $zip = new ZipArchive;
+//Escape titolo
+$nome_gioco = utf8_decode($nome_gioco);
 $zipname = 'SchedePG - ' . $nome_gioco . '.zip';
 $zip->open($zipname, ZipArchive::CREATE);
 // Crea un file zip con tutte le schede
