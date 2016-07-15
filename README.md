@@ -1,5 +1,10 @@
 PMS
 ===
+**Prerequisiti**
+
+PHP Version >= **5.x**
+
+Modulo **ZipArchive** abilitato per stampare in massa le schede dei personaggi. Per la stampa singola non è necessario.
 
 Installazione
 ==
