@@ -5,6 +5,9 @@ if (!isset($nome_gioco))
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
+		    <a class="navbar-brand" href="#">
+        		<img alt="" src="../minilogo.png">
+      		</a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -33,6 +36,9 @@ if (!isset($nome_gioco))
 					<a href="accessi.php" rel="tooltip" title="Gestisci gli accessi">Accessi</a>
 				</li>
 				<li class="divider"></li>
+				<li>
+					<a href="strumenti.php" rel="tooltip" title="Strumenti per master">Strumenti per Master</a>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li style="background:#2D6CA2;">

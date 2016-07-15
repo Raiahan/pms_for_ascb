@@ -5,6 +5,9 @@ if (!isset($nome_gioco))
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="" src="minilogo.png">
+            </a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
